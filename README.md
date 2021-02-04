@@ -19,7 +19,7 @@
 
 - has_many :items
 - has_many :purchase
-- has_many :addresses
+
 
 ## itemsテーブル
 | Column              | Type      | Options                       |
@@ -38,7 +38,7 @@
 
 - has_one :purchase
 - belongs_to :users
-- 
+
 
 ## purchases テーブル
 
