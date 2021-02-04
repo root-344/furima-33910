@@ -19,6 +19,7 @@
 
 - has_many :items
 - has_many :purchase
+- has_many :addresses
 
 ## itemsテーブル
 | Column              | Type      | Options                       |
