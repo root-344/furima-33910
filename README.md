@@ -9,8 +9,8 @@
 | nickname           | string  | null: false               |
 | last_name          | string  | null: false               |
 | first_name         | string  | null: false               |
-| last_name(kata)    | string  | null: false               |
-| last_name(kata)    | string  | null: false               |
+| last_name_kata     | string  | null: false               |
+| first_name_kata    | string  | null: false               |
 | birth              | date    | null: false               |
 
 
