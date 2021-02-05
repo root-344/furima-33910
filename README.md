@@ -55,13 +55,14 @@
 
 ## addresses テーブル
 
-| Column        | Type    | Options     |
-| --------      | ------  | ----------- |
-| zio           | string  | null: false |
-| ship_region   | string  | null: false |
-| ship_city     | string  | null: false |
-| ship_address  | string  | null: false |
-| ship_building | string  |             |
-| phone         | integer | null: false |
+| Column        | Type       | Options                       |
+| --------------| ---------- | ----------------------------- |
+| zio           | string     | null: false                   |
+| ship_region   | string     | null: false                   |
+| ship_city     | string     | null: false                   |
+| ship_address  | string     | null: false                   |
+| ship_building | string     |                               |
+| phone         | integer    | null: false                   |
+| purchase      | reference  | null:false, foreign_key: true |
 
 - belongs_to :purchase
