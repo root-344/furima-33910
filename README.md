@@ -24,7 +24,7 @@
 | Column              | Type       | Options                       |
 | ------------------- | -----------| ----------------------------- |
 | product             | string     | null: false                   |
-| user_id             | reference  | null:false, foreign_key: true |
+| user            | reference  | null:false, foreign_key: true |
 | class               | integer    | null: false                   |
 | product_description | text       | null: false                   |
 | product_states      | integer    | null: false                   |
