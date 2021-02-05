@@ -31,7 +31,7 @@
 | shipping_charges_id    | integer    | null: false                   |
 | region_id              | integer    | null: false                   |
 | eta_id                 | integer    | null: false                   |
-| price_id               | integer    | null: false                   |
+| price                  | integer    | null: false                   |
 
 ### Association
 
