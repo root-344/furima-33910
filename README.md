@@ -11,9 +11,8 @@
 | first_name         | string  | null: false |
 | last_name(kata)    | string  | null: false |
 | last_name(kata)    | string  | null: false |
-| bod(y)             | string  | null: false |
-| bod(m)             | string  | null: false |
-| bod(d)             | string  | null: false |
+| birth              | date    | null: false |
+
 
 ### Association
 
