@@ -46,6 +46,21 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
+      it '半角英語のみでは登録できないこと' do
+        @user.password = 'aaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+      it '半角数字のみでは登録できないこと' do
+        @user.password = '000000'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+      it '全角では登録できないこと' do
+        @user.password = 'MICHI1'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
       it 'passwordが5文字以下であれば登録できないこと' do
         @user.password = '00000'
         @user.password_confirmation = '00000'
@@ -55,7 +70,7 @@ RSpec.describe User, type: :model do
       it 'パスワードは、確認用を含めて2回入力すること' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password", 'Password is invalid')
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
       it 'パスワードとパスワード（確認用）は、値の一致が必須であること' do
         @user.password = 'michi1'
