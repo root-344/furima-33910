@@ -25,7 +25,7 @@
 | ---------------------- | -----------| ------------------------------ |
 | product                | string     | null: false                    |
 | user                   | reference  | null: false, foreign_key: true |
-| class_id               | integer    | null: false                    |
+| category_id            | integer    | null: false                    |
 | product_description    | text       | null: false                    |
 | product_states_id      | integer    | null: false                    |
 | shipping_charges_id    | integer    | null: false                    |
