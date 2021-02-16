@@ -1,8 +1,12 @@
 class PurchasesController < ApplicationController
-
+  
   def index
     @purchase_address = PurchaseAddress.new
     @item = Item.find(params[:item_id])
+    if current_user == @item.user || @item.purchase.present?
+      redirect_to root_path
+    end 
+
   end
 
   def create
@@ -21,4 +25,5 @@ class PurchasesController < ApplicationController
   def purchase_address_params
     params.require(:purchase_address).permit(:zip, :ship_region_id, :ship_city, :ship_address, :ship_building, :phone).merge(user_id: current_user.id, item_id: params[:item_id])
   end
+
 end
