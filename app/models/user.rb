@@ -15,4 +15,5 @@ class User < ApplicationRecord
     validates :birth
   end
   has_many :items
+  has_many :purchases
 end
