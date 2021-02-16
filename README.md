@@ -57,7 +57,7 @@
 
 | Column           | Type       | Options                       |
 | -----------------| ---------- | ----------------------------- |
-| zio              | string     | null: false                   |
+| zip              | string     | null: false                   |
 | ship_region_id   | integer    | null: false                   |
 | ship_city        | string     | null: false                   |
 | ship_address     | string     | null: false                   |
