@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/
+    VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
     validates :password, format: { with: VALID_PASSWORD_REGEX }
     validates :last_name, format: {with: /\A[ぁ-んァ-ン一-龥]/}
     validates :first_name, format: {with: /\A[ぁ-んァ-ン一-龥]/}
@@ -15,4 +15,5 @@ class User < ApplicationRecord
     validates :birth
   end
   has_many :items
+  has_many :purchases
 end
