@@ -9,13 +9,13 @@ RSpec.describe PurchaseAddress, type: :model do
     end
     describe '商品購入' do
       context '保存ができるとき' do
-       it '郵便番号・都道府県・市区町村・番地・電話番号があれば保存できること' do
+       it '必要な項目に全て記載があれば保存できること' do
          expect(@purchase_address).to be_valid
        end
        it 'ship_buildingは空でも保存できること' do
          @purchase_address.ship_building = nil
          expect(@purchase_address).to be_valid
-        end
+       end
       end
       context '保存できないとき' do
         it 'zipが空だと保存できないこと' do
@@ -57,6 +57,11 @@ RSpec.describe PurchaseAddress, type: :model do
           @purchase_address.phone = "１２３４５６７８９０１"
           @purchase_address.valid?
           expect(@purchase_address.errors.full_messages).to include("Phone is invalid")
+        end
+        it 'tokenが空では保存できないこと' do
+          @purchase_address.token = nil
+          @purchase_address.valid?
+          expect(@purchase_address.errors.full_messages).to include("Token can't be blank")
         end
       end
     end

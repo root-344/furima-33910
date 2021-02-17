@@ -6,5 +6,6 @@ FactoryBot.define do
     ship_address { '青山1-1-1' }
     ship_building { '柳ビル203' }
     phone {'12345678901'}
+    token {"tok_abcdefghijk00000000000000000"}
   end
 end
