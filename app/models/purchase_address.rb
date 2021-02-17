@@ -1,6 +1,6 @@
 class PurchaseAddress
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :zip, :ship_region_id, :ship_city, :ship_address, :ship_building, :phone
+  attr_accessor :user_id, :item_id, :zip, :ship_region_id, :ship_city, :ship_address, :ship_building, :phone, :token
   
   with_options presence: true do
     validates :user_id
@@ -9,6 +9,7 @@ class PurchaseAddress
     validates :ship_city
     validates :ship_address
     validates :phone, format: {with: /\A\d{10}\z|\A\d{11}\z/ }
+    validates :token
   end  
   validates :ship_region_id, numericality: {other_than: 1, message: "Select"}
 
